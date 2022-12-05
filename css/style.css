@@ -1,0 +1,563 @@
+/* Абсолютные Стили */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: .3s ease;
+}
+*::selection {
+    color: #f4f4f4;
+    background: #ededed;
+    text-shadow: 0 0 1px white;
+}
+
+/* Анимация */
+
+@keyframes ns {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes an {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(-1);
+    }
+}
+@keyframes detail-more {
+    0% {
+        position: relative;
+        top: -4em;
+        opacity: 0;
+    }
+    100% {
+        position: relative;
+        top: 0em;
+        opacity: 1;
+    }
+}
+@keyframes detail-sunner {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
+/* Тэги */
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: #6a7079;
+}
+header {
+    background: #525b64;
+}
+main {
+    background: white;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+h1, h2, h3 {
+    margin-bottom:  10px;
+    font-weight: bold;
+    font-size: 1.7em;
+    font-family: 'Ubuntu', serif;
+}
+h2 {
+    font-size: 1.3em;
+}
+video, source {
+    width: 100%;
+}
+.etr {
+    margin: 0 auto;
+    padding: 150px 0;
+    text-align: center;
+    width: 500px;
+    color: white;
+}
+.etr img {
+    position: relative;
+    right: -25px;
+    width: 415px;
+}
+.etr h2 {
+    margin: 25px 0;
+}
+.etr p {
+    font-size: 15px;
+    text-transform: capitalize;
+    text-shadow: 0 0 1px black;
+}
+.etr a {
+    margin-top: 25px;
+    margin-left: 20px;
+    background: #6a7079;
+}
+.inline {
+    color: #6a7079;
+    width: max-content;
+    max-width: 1170px;
+    margin: auto;
+    padding: 4em 0;
+    display: flow-root;
+}
+.inline section {
+    display: inline-grid;
+    padding: 0 2em;
+}
+.inline .left {
+    float: left;
+    width: 45%;
+}
+.inline .right {
+    float: right;
+    width: 45%;
+}
+.block {
+    background: #f4f4f4;
+    padding: 4px;
+    border-radius:  5px;
+    box-shadow:  0 0 35px -16px black;
+}
+.block a {
+    color: #6a7079;
+    padding: 12px 20px;
+    display: inline-flex;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.block a:first-child {
+    border-radius: 5px 0 0 0;
+}
+.block .as > a[to].yy {
+    background: white;
+}
+.block div[id] {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size:  14px;
+    color: white;
+    display: none;
+    border-radius: 0 0 5px 5px;
+}
+.block div[id].yy {
+    display: block;
+    animation: ns 0.8s;
+    color: inherit;
+    opacity: 1;
+}
+.block .blocks .detail {
+    cursor: pointer;
+}
+
+
+.descr {
+    display: flow-root;
+    padding: 20px;
+}
+.descr img {
+    float: right;
+}
+.marks {
+    display: inline-block;
+}
+.marks span.mark {
+    display: block;
+    padding: .5em 0;
+    font-size: 13px;
+}
+.marks span.mark:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
+    font-size: 8px;
+    padding: 3px 4px;
+    margin-right: 10px;
+    color: white;
+    background: #4ed2d7;
+    border-radius: 100%;
+}
+/*
+.Smark-left:before, .Smark-right:after, .Smark-left-end:before, .Smark-right-end:after {
+    content: attr(chr);
+    margin: 0 5px;
+    padding: 0 4px;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    background: #4ed2d7;
+    border-radius: 100%;
+}
+.Smark-left-end:before {
+    float: left;
+}
+.Smark-right-end:after {
+    float: right;
+}
+*/
+.dt-left[data-text]:before, .dt-right[data-text]:after {
+    content: attr(data-text);
+    padding: 5px 7px;
+    color: white;
+    border-radius: 3px;
+    background: #4ed2d7;
+}
+.dt-left[data-text]:before {
+    margin-right: 10px;
+}
+.dt-right[data-text]:after {
+    margin-left: 10px;
+}
+
+
+.event, .in-event {
+    max-width: 1170px;
+    margin: auto;
+    color: #6a7079;
+    text-align: center;
+    padding: 100px 0;
+}
+
+
+
+.sections {
+    display: flex;
+    padding: 4em 0;
+}
+.sections section {
+    padding: 0 2em;
+}
+.sections section .img {
+    cursor: pointer;
+}
+.sections section .img:before {
+    transform: scaleX(0);
+    transition: .3s ease;
+    content: url(../img/green-circle.png);
+    position: absolute;
+    top: auto;
+}
+.sections section .img:hover:before {
+    transform: scaleX(1);
+}
+.sections section .img:hover ~ h3 {
+    color: #6bd8d3;
+}
+.sections section img {
+    border-radius: 100%;
+    box-shadow: 0 0 35px -16px black;
+}
+.sections section h3 {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.detail {
+    margin: 1em 0;
+    display: grid;
+}
+.detail:last-child {
+    margin-bottom: auto;
+}
+.detail > .sunner {
+    margin-bottom: 1em;
+    display: block;
+    color: #666;
+}
+.detail > .sunner > span {
+    float: right;
+}
+.detail > .sunner > span:before {
+    content: "+";
+    position: relative;
+    top: -6px;
+    right: -2px;
+    color: #4ed2d7;
+    font-size: 22px;
+}
+.detail.active > .sunner > span:before {
+    animation: detail-sunner .3s;
+    content: "-";
+}
+.more {
+    line-height: 20px;
+    color: #939597;
+    margin: 1em 0;
+    display: none;
+}
+.detail.active .more {
+    animation: detail-more .3s;
+    display: block;
+}
+
+/* Улучшеный Select --> */
+
+.detail.select {
+    margin: 0;
+}
+.detail.select .sunner {
+    margin: 0;
+}
+.detail .select .more {
+    margin: 0;
+}
+
+/* <-- Улучшеный Select */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bg-gray {
+    background: #f4f4f4;
+}
+form.selection {
+    background:  white;
+    display: inline-flex;
+    margin-top: 20px;
+    padding: 30px;
+}
+form > input, button, select {
+    border: unset;
+    font-size: 14px;
+    color:  #6a7079;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: unset;
+}
+input[type="text"] {
+    padding: .8em;
+    margin-right: 20px;
+    background: #f4f4f4;
+    cursor: text;
+}
+input[type="text"]:focus {
+    box-shadow: 0 0 10px #ccc;
+    background:  white;
+}
+button {
+    text-transform:  uppercase;
+    padding:  10px;
+    margin-left:  20px;
+    color: white;
+    font-weight: bold;
+    background: #7ea4e8;
+    outline: none;
+}
+select {
+    padding:  10px;
+    background:  #f4f4f4;
+    outline: none;
+}
+select:focus {
+    background: #2cc7c1;
+    color: white;
+}
+option {
+    color: #2cc7c1;
+    background: #525b64;
+}
+option:hover {
+    color: white;
+}
+
+
+
+
+.link {
+    margin-top: 2em;
+    font-weight: bold;
+    color: #4ed2d7;
+    display: block;
+    text-transform: uppercase;
+}
+video.example {
+    background: url(../img/Play-circle.png) no-repeat 50%;
+    background-color: #f4f4f4;
+}
+
+
+
+
+
+
+
+.slider {
+    background: #f4f4f4;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.slider .xers .xer {
+    display: none;
+}
+.slider .xers .xer:first-child {
+    display: block;
+}
+.slider a {
+    float: left;
+    color:  transparent;
+    border: 2px solid #4ed2d7;
+    border-radius:  100%;
+    padding: 0 .25em;
+    font-size: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.slider a:first-child, .slider a:hover {
+    background:  #4ed2d7;
+}
+.as {
+      
+}
+.xer {
+    padding: 6.5em;
+}
+.in-event {
+    display: inline-flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background: #3f464c;
+}
+footer .sponsors {
+    background: white;
+}
+footer .sponsors img {
+    margin-left: 4em;
+}
+footer iframe {
+    display: flex;
+    width: 100%;
+}
+footer .helpful {
+    background: #525b64;
+}
+footer .inline section {
+    max-width: 450px;
+}
+footer .helpful h3, footer .helpful h4 {
+    font-weight: normal;
+    color: #ededed;
+    text-shadow: 0 0 2px white;
+    text-transform: capitalize;
+}
+footer .helpful p {
+    font-size: 14px;
+    color: #ccc;
+}
+footer .copyright {
+    max-width: 1170px;
+    margin: auto;
+    color: #85888b;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Доп. Стили */
+
+span.green {
+    color: #4ed2d7;
+}
+
+a.clr {
+    background: #7ea4e8;
+    padding-right: 15px;
+}
+.clr:hover {
+    box-shadow: 0 0 40px -12px #111;
+}
+.etr a, a.clr {
+    padding: 10px 25px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 3px;
+}
+a.clr:after, form button[type="submit"]:after {
+    content: "\e080";
+    background: white;
+    color: #7ea4e8;
+    font-family: 'Glyphicons Halflings';
+    padding: 2px 3px;
+    margin-left: 10px;
+    border-radius: 100%;
+    font-size: 8px;
+}
+form button[type="submit"]:after {
+    font-size: 10px;
+}
+
+
+
+p, small {
+    line-height: 1.5em;
+}
+hr {
+    background: #f4f4f4;
+    height: 10px;
+    border: unset;
+}
